@@ -385,7 +385,8 @@ export default function MeetingContent({ meeting, onOpenSidebar }: MeetingConten
       {/* Footer */}
       <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-white mt-16">
         <div className="max-w-5xl mx-auto px-6 py-12">
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-6">
+            {/* Course Info */}
             <div className="inline-block p-3 bg-blue-600/20 rounded-2xl mb-2">
               <span className="text-4xl">📘</span>
             </div>
@@ -402,6 +403,39 @@ export default function MeetingContent({ meeting, onOpenSidebar }: MeetingConten
               <span className="px-4 py-2 bg-red-900/30 text-red-400 rounded-lg border border-red-700/30">
                 UAS: Pertemuan 16
               </span>
+            </div>
+
+            {/* Divider */}
+            <div className="border-t border-slate-700/50 my-8"></div>
+
+            {/* University Info */}
+            <div className="space-y-4">
+              {/* Logo */}
+              <div className="flex justify-center">
+                <img 
+                  src="https://ik.imagekit.io/syro1/FSTI/FSTI%20Colour_PNG_300.png" 
+                  alt="Logo FSTI Universitas Widya Gama"
+                  className="h-20 w-auto hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              
+              {/* University Text */}
+              <div className="space-y-2">
+                <h4 className="text-lg font-bold text-blue-400">
+                  Program Studi Teknik Informatika
+                </h4>
+                <p className="text-slate-300 text-sm">
+                  Fakultas Sains dan Teknologi Informasi
+                </p>
+                <p className="text-slate-400 text-sm font-semibold">
+                  Universitas Widya Gama
+                </p>
+              </div>
+
+              {/* Additional Info */}
+              <div className="pt-4 text-slate-500 text-xs">
+                <p>© 2026 Universitas Widya Gama. All rights reserved.</p>
+              </div>
             </div>
           </div>
         </div>
