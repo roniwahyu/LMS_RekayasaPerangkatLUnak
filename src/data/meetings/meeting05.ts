@@ -653,5 +653,236 @@ Menunjukkan physical deployment dari artifacts pada nodes.
     "OMG Unified Modeling Language Specification v2.5.1",
     "Sommerville, I. (2016). Software Engineering. Chapter 5.",
     "Booch, G., Rumbaugh, J., Jacobson, I. (2005). The Unified Modeling Language User Guide. 2nd Edition."
+  ],
+  assignments: [
+    {
+      id: "tugas-5-1",
+      title: "UML Modeling Project: Sistem Perpustakaan Digital",
+      type: "kelompok",
+      description: "Membuat serangkaian diagram UML lengkap untuk sistem perpustakaan digital kampus.",
+      instructions: [
+        "Bentuk kelompok 4-5 orang",
+        "Analisis kebutuhan sistem perpustakaan digital:",
+        "  - Peminjaman buku digital",
+        "  - Pencarian katalog",
+        "  - Manajemen anggota",
+        "  - Reservasi buku",
+        "  - Notifikasi dan reminder",
+        "Buat diagram UML berikut:",
+        "  1. Use Case Diagram (semua actors dan use cases)",
+        "  2. Class Diagram (minimal 10 classes dengan relationships)",
+        "  3. Sequence Diagram (untuk 3 skenario utama)",
+        "  4. Activity Diagram (untuk 2 proses bisnis)",
+        "  5. State Machine Diagram (untuk entitas yang relevan)",
+        "Gunakan UML tools profesional (StarUML, Visual Paradigm, atau Enterprise Architect)",
+        "Pastikan konsistensi antar diagram",
+        "Buat dokumentasi penjelasan untuk setiap diagram"
+      ],
+      deliverables: [
+        "Use Case Diagram dengan actor glossary",
+        "Class Diagram dengan class specifications",
+        "3 Sequence Diagrams dengan penjelasan",
+        "2 Activity Diagrams dengan swimlanes",
+        "State Machine Diagram",
+        "Dokumentasi lengkap (10-15 halaman)",
+        "File source (editable) dan export (PDF/PNG)"
+      ],
+      duration: "2 minggu",
+      difficulty: "sulit",
+      skills: [
+        "UML modeling",
+        "System analysis",
+        "Object-oriented design",
+        "Tools proficiency",
+        "Team collaboration"
+      ],
+      resources: [
+        "StarUML atau Visual Paradigm",
+        "UML specification guide",
+        "Contoh diagram UML"
+      ],
+      rubric: [
+        {
+          criteria: "Kelengkapan Diagram",
+          excellent: "Semua diagram yang diminta dibuat dengan lengkap dan detail",
+          good: "Sebagian besar diagram lengkap dengan beberapa yang kurang detail",
+          satisfactory: "Beberapa diagram kurang lengkap atau tidak ada",
+          points: 30
+        },
+        {
+          criteria: "Ketepatan Notasi UML",
+          excellent: "Semua notasi UML benar dan mengikuti standar",
+          good: "Sebagian besar notasi benar dengan sedikit kesalahan",
+          satisfactory: "Banyak notasi yang tidak sesuai standar",
+          points: 25
+        },
+        {
+          criteria: "Konsistensi Antar Diagram",
+          excellent: "Semua diagram konsisten satu sama lain",
+          good: "Sebagian besar diagram konsisten",
+          satisfactory: "Banyak inkonsistensi antar diagram",
+          points: 25
+        },
+        {
+          criteria: "Kualitas Dokumentasi",
+          excellent: "Dokumentasi sangat jelas, terstruktur, dan informatif",
+          good: "Dokumentasi cukup jelas dan terstruktur",
+          satisfactory: "Dokumentasi kurang jelas atau tidak lengkap",
+          points: 20
+        }
+      ]
+    },
+    {
+      id: "tugas-5-2",
+      title: "Class Diagram Reverse Engineering",
+      type: "praktikum",
+      description: "Melakukan reverse engineering dari kode program yang ada menjadi class diagram UML.",
+      instructions: [
+        "Pilih proyek open source atau kode program yang sudah ada (minimal 10 classes)",
+        "Analisis struktur kode program:",
+        "  - Identifikasi semua classes",
+        "  - Identifikasi attributes dan methods",
+        "  - Identifikasi relationships (association, inheritance, dll)",
+        "Buat class diagram secara manual menggunakan UML tools",
+        "Gunakan fitur reverse engineering dari UML tools (jika tersedia)",
+        "Bandingkan hasil manual dengan hasil otomatis",
+        "Analisis perbedaan dan kesamaan",
+        "Buat laporan perbandingan"
+      ],
+      deliverables: [
+        "Class diagram hasil manual",
+        "Class diagram hasil reverse engineering otomatis",
+        "Perbandingan kedua diagram",
+        "Analisis perbedaan (3-5 halaman)",
+        "Source code yang dianalisis"
+      ],
+      duration: "1 minggu",
+      difficulty: "sedang",
+      skills: [
+        "Code analysis",
+        "UML modeling",
+        "Reverse engineering",
+        "Critical thinking"
+      ],
+      resources: [
+        "Proyek open source (GitHub)",
+        "StarUML atau Visual Paradigm",
+        "IDE dengan fitur reverse engineering"
+      ]
+    },
+    {
+      id: "tugas-5-3",
+      title: "Sequence Diagram: API Integration",
+      type: "praktikum",
+      description: "Membuat sequence diagram untuk skenario integrasi API antar sistem.",
+      instructions: [
+        "Pilih skenario integrasi API (contoh: payment gateway, social media login, maps API)",
+        "Identifikasi semua participants (objects/systems) yang terlibat",
+        "Tentukan skenario yang akan dimodelkan:",
+        "  - Happy path (skenario sukses)",
+        "  - Alternative flows (skenario alternatif)",
+        "  - Exception flows (error handling)",
+        "Buat sequence diagram dengan detail:",
+        "  - Lifelines",
+        "  - Messages (synchronous, asynchronous, return)",
+        "  - Activation bars",
+        "  - Combined fragments (alt, opt, loop, par)",
+        "Tambahkan constraints dan notes",
+        "Validasi dengan implementasi nyata (jika memungkinkan)"
+      ],
+      deliverables: [
+        "Sequence diagram untuk happy path",
+        "Sequence diagram untuk alternative/exception flows",
+        "Penjelasan setiap message dan interaction",
+        "Perbandingan dengan dokumentasi API resmi"
+      ],
+      duration: "5 hari",
+      difficulty: "sedang",
+      skills: [
+        "Sequence diagram modeling",
+        "API understanding",
+        "System integration",
+        "Detail orientation"
+      ],
+      resources: [
+        "API documentation (contoh: Stripe, Google Maps, Facebook)",
+        "UML tools",
+        "Sequence diagram examples"
+      ]
+    },
+    {
+      id: "tugas-5-4",
+      title: "Activity Diagram: Business Process Modeling",
+      type: "survey",
+      description: "Memodelkan proses bisnis nyata dari unit di kampus menggunakan activity diagram.",
+      instructions: [
+        "Pilih satu proses bisnis di kampus (contoh: pendaftaran mata kuliah, pengajuan cuti, pengajuan skripsi)",
+        "Lakukan wawancara dengan staff terkait untuk memahami proses",
+        "Identifikasi:",
+        "  - Semua aktivitas dalam proses",
+        "  - Decision points",
+        "  - Parallel activities",
+        "  - Actors yang terlibat",
+        "  - Input dan output setiap aktivitas",
+        "Buat activity diagram dengan swimlanes",
+        "Tunjukkan decision nodes, merge nodes, fork, dan join",
+        "Validasi diagram dengan staff yang diwawancarai",
+        "Buat usulan perbaikan proses jika ada inefficiency"
+      ],
+      deliverables: [
+        "Transkrip wawancara",
+        "Activity diagram dengan swimlanes",
+        "Penjelasan setiap aktivitas dan decision",
+        "Validasi dari staff terkait",
+        "Usulan perbaikan proses (jika ada)"
+      ],
+      duration: "1 minggu",
+      difficulty: "sedang",
+      skills: [
+        "Business process modeling",
+        "Interview skills",
+        "Activity diagram",
+        "Process improvement"
+      ],
+      resources: [
+        "UML tools",
+        "Interview guide",
+        "Activity diagram examples"
+      ]
+    },
+    {
+      id: "tugas-5-5",
+      title: "State Machine: Object Lifecycle",
+      type: "individual",
+      description: "Membuat state machine diagram untuk menunjukkan lifecycle objek dalam sistem.",
+      instructions: [
+        "Pilih entitas dengan lifecycle yang kompleks (contoh: Order, Ticket, Document, Account)",
+        "Identifikasi semua states yang mungkin:",
+        "  - Initial state",
+        "  - Intermediate states",
+        "  - Final states",
+        "Identifikasi transitions antar states:",
+        "  - Triggers (events)",
+        "  - Guards (conditions)",
+        "  - Actions",
+        "Buat state machine diagram",
+        "Tambahkan entry/do/exit actions untuk setiap state",
+        "Identifikasi composite states jika ada",
+        "Buat state transition table sebagai pelengkap diagram"
+      ],
+      deliverables: [
+        "State machine diagram",
+        "State transition table",
+        "Penjelasan setiap state dan transition",
+        "Contoh skenario perjalanan objek melalui states"
+      ],
+      duration: "4 hari",
+      difficulty: "sedang",
+      skills: [
+        "State machine modeling",
+        "Object lifecycle understanding",
+        "Detail orientation"
+      ]
+    }
   ]
 };

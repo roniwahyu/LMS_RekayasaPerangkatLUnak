@@ -638,5 +638,194 @@ Code → Requirements
     "Wiegers, K. & Beatty, J. (2013). Software Requirements. 3rd Edition.",
     "IEEE Std 830-1998. Recommended Practice for Software Requirements Specifications.",
     "Pohl, K. (2010). Requirements Engineering: Fundamentals, Principles, and Techniques."
+  ],
+  assignments: [
+    {
+      id: "tugas-4-1",
+      title: "Requirements Gathering: Sistem Informasi Akademik",
+      type: "survey",
+      description: "Melakukan pengumpulan requirements untuk pengembangan atau perbaikan sistem informasi akademik di fakultas dengan teknik elicitation yang berbeda.",
+      instructions: [
+        "Pilih salah satu modul sistem akademik (KRS, KHS, Jadwal, Nilai, dll)",
+        "Identifikasi stakeholder terkait (mahasiswa, dosen, admin, kaprodi)",
+        "Gunakan minimal 3 teknik elicitation berbeda:",
+        "  - Interview dengan 2-3 stakeholder berbeda",
+        "  - Questionnaire untuk minimal 20 responden",
+        "  - Observation proses yang ada",
+        "  - Document analysis sistem saat ini",
+        "Dokumentasikan semua requirements yang terkumpul",
+        "Klasifikasikan menjadi functional dan non-functional requirements",
+        "Prioritaskan menggunakan MoSCoW method",
+        "Buat Software Requirements Specification (SRS) document"
+      ],
+      deliverables: [
+        "Transkrip wawancara (minimal 3 stakeholder)",
+        "Hasil questionnaire dengan analisis",
+        "Catatan observasi dan foto dokumentasi",
+        "Daftar requirements (functional & non-functional)",
+        "Prioritization matrix (MoSCoW)",
+        "Dokumen SRS mengikuti IEEE 830 standard (minimal 15 halaman)",
+        "Presentasi (15-20 slide)"
+      ],
+      duration: "3 minggu",
+      difficulty: "sulit",
+      skills: [
+        "Requirements elicitation",
+        "Komunikasi dengan stakeholder",
+        "Dokumentasi teknis",
+        "Analisis dan klasifikasi",
+        "Prioritization"
+      ],
+      resources: [
+        "IEEE 830 Template",
+        "Questionnaire template (Google Forms)",
+        "Interview guide",
+        "MoSCoW prioritization framework"
+      ],
+      rubric: [
+        {
+          criteria: "Teknik Elicitation",
+          excellent: "Menggunakan 4+ teknik elicitation dengan implementasi yang sangat baik dan komprehensif",
+          good: "Menggunakan 3 teknik elicitation dengan implementasi yang baik",
+          satisfactory: "Menggunakan kurang dari 3 teknik atau implementasi kurang mendalam",
+          points: 25
+        },
+        {
+          criteria: "Kelengkapan Requirements",
+          excellent: "Requirements lengkap, terperinci, dan mencakup semua aspek sistem",
+          good: "Requirements cukup lengkap dengan beberapa detail yang perlu ditambahkan",
+          satisfactory: "Requirements kurang lengkap atau terlalu umum",
+          points: 25
+        },
+        {
+          criteria: "Dokumentasi SRS",
+          excellent: "SRS mengikuti IEEE 830 standard dengan struktur yang sangat baik dan profesional",
+          good: "SRS cukup baik dengan struktur yang jelas",
+          satisfactory: "SRS kurang terstruktur atau tidak mengikuti standar",
+          points: 25
+        },
+        {
+          criteria: "Analisis & Prioritisasi",
+          excellent: "Analisis mendalam dengan prioritisasi yang tepat dan well-justified",
+          good: "Analisis cukup baik dengan prioritisasi yang relevan",
+          satisfactory: "Analisis dan prioritisasi kurang mendalam",
+          points: 25
+        }
+      ]
+    },
+    {
+      id: "tugas-4-2",
+      title: "Use Case Modeling: Aplikasi E-Commerce",
+      type: "praktikum",
+      description: "Membuat use case diagram dan use case specification untuk aplikasi e-commerce sederhana.",
+      instructions: [
+        "Pilih fitur utama aplikasi e-commerce (contoh: checkout, payment, order tracking)",
+        "Identifikasi semua actors yang terlibat",
+        "Buat use case diagram menggunakan UML tools (StarUML, draw.io, atau Visual Paradigm)",
+        "Tulis use case specification untuk minimal 5 use case utama:",
+        "  - Use case name dan ID",
+        "  - Primary actor",
+        "  - Preconditions",
+        "  - Main flow (happy path)",
+        "  - Alternative flows",
+        "  - Exception flows",
+        "  - Postconditions",
+        "  - Business rules",
+        "Identifikasi include dan extend relationships",
+        "Review dan validasi dengan teman (peer review)"
+      ],
+      deliverables: [
+        "Use case diagram (format editable dan PDF)",
+        "Use case specification document (minimal 5 use cases)",
+        "Actor glossary",
+        "Peer review feedback form"
+      ],
+      duration: "1 minggu",
+      difficulty: "sedang",
+      skills: [
+        "UML modeling",
+        "Use case writing",
+        "Attention to detail",
+        "Tools usage"
+      ],
+      resources: [
+        "StarUML atau draw.io",
+        "Use case specification template",
+        "Contoh use case diagram"
+      ]
+    },
+    {
+      id: "tugas-4-3",
+      title: "User Stories Workshop",
+      type: "kelompok",
+      description: "Menulis user stories untuk proyek aplikasi mobile kampus dan melakukan estimation dengan planning poker.",
+      instructions: [
+        "Bentuk kelompok 4-5 orang",
+        "Bayangkan aplikasi mobile kampus yang ideal",
+        "Tulis minimal 20 user stories dengan format:",
+        "  'As a [role], I want [feature], so that [benefit]'",
+        "Setiap user story harus memiliki acceptance criteria",
+        "Lakukan estimation session dengan planning poker:",
+        "  - Setiap anggota memberikan estimate (story points)",
+        "  - Diskusikan perbedaan estimate",
+        "  - Capai consensus",
+        "Prioritaskan user stories berdasarkan business value",
+        "Buat product backlog yang terurut"
+      ],
+      deliverables: [
+        "Daftar 20+ user stories dengan acceptance criteria",
+        "Planning poker results (foto atau screenshot)",
+        "Product backlog yang terurut prioritas",
+        "Refleksi proses estimation (2-3 halaman)"
+      ],
+      duration: "1 minggu",
+      difficulty: "sedang",
+      skills: [
+        "User story writing",
+        "Estimation techniques",
+        "Team collaboration",
+        "Prioritization"
+      ],
+      resources: [
+        "Planning poker cards (online atau fisik)",
+        "User story template",
+        "Contoh acceptance criteria"
+      ]
+    },
+    {
+      id: "tugas-4-4",
+      title: "Requirements Validation Review",
+      type: "kelompok",
+      description: "Melakukan review dan validasi requirements document dari kelompok lain.",
+      instructions: [
+        "Bentuk kelompok reviewer (3-4 orang)",
+        "Dapatkan requirements document dari kelompok lain",
+        "Lakukan formal inspection dengan checklist:",
+        "  - Completeness check",
+        "  - Consistency check",
+        "  - Clarity check",
+        "  - Feasibility check",
+        "  - Verifiability check",
+        "Dokumentasikan setiap issue yang ditemukan",
+        "Buat inspection report dengan severity level",
+        "Presentasikan findings kepada kelompok yang dibuat",
+        "Kelompok yang dibuat harus memberikan response"
+      ],
+      deliverables: [
+        "Inspection checklist (filled)",
+        "Inspection report dengan issues",
+        "Severity classification",
+        "Recommendations untuk improvement",
+        "Response dari kelompok yang dibuat"
+      ],
+      duration: "4 hari",
+      difficulty: "sedang",
+      skills: [
+        "Critical review",
+        "Quality assurance",
+        "Communication",
+        "Documentation"
+      ]
+    }
   ]
 };
