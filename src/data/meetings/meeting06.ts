@@ -494,5 +494,82 @@ Input → [Validate] → [Transform] → [Enrich] → [Aggregate] → Output
     "Fowler, M. (2002). Patterns of Enterprise Application Architecture.",
     "Newman, S. (2015). Building Microservices. O'Reilly.",
     "Richards, M. (2015). Software Architecture Patterns. O'Reilly."
+  ],
+  assignments: [
+    {
+      id: "tugas-6-1",
+      title: "Desain Arsitektur Sistem E-Learning Kampus",
+      type: "kelompok",
+      description: "Rancang arsitektur software untuk sistem e-learning kampus yang scalable, maintainable, dan secure. Kelompok akan membuat dokumen arsitektur lengkap dengan justifikasi pemilihan pola arsitektur.",
+      instructions: [
+        "LANGKAH 1 - PEMBENTUKAN TIM: Bentuk kelompok 4-5 orang. Tentukan ketua kelompok dan pembagian tugas (architect, designer, documenter, presenter).",
+        "LANGKAH 2 - ANALISIS REQUIREMENTS: Identifikasi requirements sistem e-learning: (a) Functional: login, upload materi, quiz, forum diskusi, grading, (b) Non-functional: 1000+ concurrent users, response time <2 detik, 99.9% uptime, data security.",
+        "LANGKAH 3 - PEMILIHAN ARSITEKTUR: Pilih pola arsitektur yang sesuai (Layered, Microservices, Event-Driven, atau kombinasi). Buat justifikasi pemilihan berdasarkan requirements dan quality attributes.",
+        "LANGKAH 4 - DESAIN HIGH-LEVEL: Buat diagram arsitektur high-level yang menunjukkan: (a) Major components/services, (b) Komunikasi antar components, (c) External systems (database, storage, email), (d) Load balancer dan caching layer.",
+        "LANGKAH 5 - DESAIN DETAIL: Untuk setiap major component, buat: (a) Component diagram, (b) Deskripsi responsibilities, (c) Interface yang disediakan, (d) Dependencies ke component lain.",
+        "LANGKAH 6 - DEPLOYMENT ARCHITECTURE: Rancang deployment architecture: (a) Server infrastructure, (b) Database sharding strategy, (c) CDN untuk static content, (d) Backup dan disaster recovery plan.",
+        "LANGKAH 7 - SECURITY ARCHITECTURE: Desain security layers: (a) Authentication & Authorization, (b) Data encryption (at rest & in transit), (c) API security, (d) DDoS protection.",
+        "LANGKAH 8 - DOKUMENTASI: Tulis Software Architecture Document (SAD) dengan struktur: (1) Introduction, (2) Architectural Goals, (3) System Overview, (4) Architectural Views, (5) Component Details, (6) Deployment View, (7) Security Architecture, (8) Quality Attributes Analysis.",
+        "LANGKAH 9 - REVIEW: Lakukan peer review dengan kelompok lain. Berikan dan terima feedback untuk improvement.",
+        "LANGKAH 10 - PRESENTASI: Siapkan presentasi 20 menit yang menjelaskan: (a) Requirements summary, (b) Architectural decisions dan trade-offs, (c) Diagram-diagram utama, (d) How architecture achieves quality attributes."
+      ],
+      deliverables: [
+        "Software Architecture Document (SAD) - format PDF, minimal 20 halaman",
+        "High-level Architecture Diagram (gunakan draw.io atau Lucidchart)",
+        "Component Diagrams untuk setiap major component",
+        "Deployment Diagram",
+        "Security Architecture Diagram",
+        "Tabel Architecture Decision Records (ADR) - minimal 5 keputusan penting",
+        "Presentasi PowerPoint (20-25 slide)",
+        "Demo prototype (opsional, bonus +10 poin)"
+      ],
+      duration: "3 minggu (21 hari kalender)",
+      difficulty: "sulit",
+      skills: [
+        "Architectural thinking",
+        "System design",
+        "Trade-off analysis",
+        "Technical documentation",
+        "Team collaboration",
+        "Presentation skills"
+      ],
+      resources: [
+        "Template Software Architecture Document (download di LMS)",
+        "Contoh Architecture Decision Records",
+        "Tools: draw.io, Lucidchart, atau ArchiMate",
+        "AWS Architecture Icons (untuk diagram)",
+        "Checklist quality attributes"
+      ],
+      rubric: [
+        {
+          criteria: "Kesesuaian Arsitektur",
+          excellent: "Arsitektur sangat sesuai dengan requirements dan quality attributes, dengan justifikasi yang kuat",
+          good: "Arsitektur sesuai dengan sebagian besar requirements dengan justifikasi yang memadai",
+          satisfactory: "Arsitektur kurang sesuai atau justifikasi lemah",
+          points: 30
+        },
+        {
+          criteria: "Kelengkapan Diagram",
+          excellent: "Semua diagram lengkap, jelas, dan mengikuti notasi standar",
+          good: "Diagram lengkap dengan beberapa kekurangan minor",
+          satisfactory: "Diagram tidak lengkap atau tidak jelas",
+          points: 25
+        },
+        {
+          criteria: "Analisis Quality Attributes",
+          excellent: "Analisis mendalam bagaimana arsitektur mencapai setiap quality attribute",
+          good: "Analisis cukup baik untuk quality attributes utama",
+          satisfactory: "Analisis quality attributes kurang mendalam",
+          points: 25
+        },
+        {
+          criteria: "Dokumentasi & Presentasi",
+          excellent: "Dokumentasi sangat profesional dan presentasi sangat jelas dan meyakinkan",
+          good: "Dokumentasi dan presentasi baik dengan struktur yang jelas",
+          satisfactory: "Dokumentasi atau presentasi kurang terstruktur",
+          points: 20
+        }
+      ]
+    }
   ]
 };

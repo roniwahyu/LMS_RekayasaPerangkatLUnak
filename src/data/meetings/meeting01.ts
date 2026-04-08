@@ -240,38 +240,42 @@ export const meeting01: Meeting = {
       id: "tugas-1-1",
       title: "Survey Sistem Informasi di Unit Kampus",
       type: "survey",
-      description: "Melakukan survey ke salah satu unit di kampus untuk mengidentifikasi sistem informasi yang digunakan, menganalisis masalah yang ada, dan memberikan rekomendasi perbaikan dari perspektif Software Engineering.",
+      description: "Lakukan survey mendalam ke salah satu unit di kampus untuk mengidentifikasi sistem informasi yang digunakan, menganalisis masalah yang ada, dan memberikan rekomendasi perbaikan dari perspektif Software Engineering.",
       instructions: [
-        "Pilih salah satu unit di kampus (BAAK, Keuangan, Perpustakaan, Laboratorium, dll)",
-        "Buat janji untuk wawancara dengan staff atau kepala unit",
-        "Siapkan daftar pertanyaan tentang sistem informasi yang digunakan",
-        "Lakukan wawancara dan observasi proses bisnis yang ada",
-        "Identifikasi masalah atau kekurangan dari sistem saat ini",
-        "Analisis dari perspektif Software Engineering (proses, kualitas, maintainability)",
-        "Buat rekomendasi perbaikan dengan pendekatan Software Engineering",
-        "Dokumentasikan hasil dalam laporan tertulis"
+        "LANGKAH 1 - PERSIAPAN: Pilih salah satu unit di kampus sebagai objek survey. Pilihan unit: BAAK (Biro Administrasi Akademik), Bagian Keuangan, Perpustakaan, Laboratorium Komputer, atau unit lain yang menggunakan sistem informasi.",
+        "LANGKAH 2 - KOORDINASI: Hubungi unit yang dipilih melalui email atau telepon. Jelaskan tujuan survey untuk tugas mata kuliah RPL. Buat janji untuk wawancara dengan staff atau kepala unit (minimal 1 jam).",
+        "LANGKAH 3 - PERSIAPAN WAWANCARA: Siapkan minimal 15 pertanyaan tertulis tentang: (a) Sistem informasi apa yang digunakan? (b) Siapa penggunanya? (c) Fitur utama apa saja? (d) Masalah apa yang sering terjadi? (e) Proses bisnis seperti apa yang didukung sistem?",
+        "LANGKAH 4 - PELAKSANAAN WAWANCARA: Lakukan wawancara dengan mencatat atau merekam (dengan izin). Amati langsung bagaimana staff menggunakan sistem. Minta izin untuk mengambil screenshot atau foto sistem (jika diperbolehkan).",
+        "LANGKAH 5 - OBSERVASI: Amati proses bisnis yang berjalan minimal 30 menit. Catat alur kerja, input-output, dan interaksi user dengan sistem.",
+        "LANGKAH 6 - ANALISIS MASALAH: Identifikasi minimal 5 masalah atau kekurangan dari sistem saat ini. Analisis dari perspektif Software Engineering: apakah masalah di proses development, kualitas software, maintainability, atau usability?",
+        "LANGKAH 7 - REKOMENDASI: Buat minimal 3 rekomendasi perbaikan yang konkret dan realistis. Setiap rekomendasi harus disertai justifikasi menggunakan konsep Software Engineering yang telah dipelajari.",
+        "LANGKAH 8 - DOKUMENTASI: Tulis laporan lengkap dengan struktur: (1) Pendahuluan, (2) Profil Unit, (3) Sistem Informasi Saat Ini, (4) Hasil Wawancara, (5) Analisis Masalah, (6) Rekomendasi, (7) Kesimpulan.",
+        "LANGKAH 9 - PRESENTASI: Buat slide presentasi yang menarik dengan visualisasi diagram, foto, dan poin-poin penting. Siapkan untuk presentasi 10 menit + 5 menit tanya jawab."
       ],
       deliverables: [
-        "Laporan hasil survey (minimal 10 halaman)",
-        "Transkrip wawancara",
-        "Foto dokumentasi (jika diizinkan)",
-        "Diagram alur proses bisnis saat ini",
-        "Daftar masalah dan rekomendasi solusi",
-        "Presentasi PowerPoint (10-15 slide)"
+        "Laporan tertulis (format PDF, minimal 10 halaman, font Times New Roman 12pt, spasi 1.5)",
+        "Transkrip wawancara lengkap (lampiran)",
+        "Foto dokumentasi kegiatan survey (minimal 3 foto)",
+        "Diagram alur proses bisnis saat ini (gunakan flowchart atau BPMN)",
+        "Tabel daftar masalah dan rekomendasi solusi",
+        "File presentasi PowerPoint (10-15 slide)",
+        "Surat izin survey yang sudah ditandatangani unit terkait"
       ],
-      duration: "2 minggu",
+      duration: "2 minggu (14 hari kalender)",
       difficulty: "sedang",
       skills: [
-        "Komunikasi dan wawancara",
-        "Analisis sistem",
+        "Komunikasi profesional dan wawancara",
+        "Analisis sistem informasi",
         "Dokumentasi teknis",
         "Pemecahan masalah",
-        "Presentasi"
+        "Presentasi dan public speaking"
       ],
       resources: [
-        "Panduan teknik wawancara (akan dibagikan di kelas)",
-        "Template laporan survey",
-        "Contoh diagram proses bisnis"
+        "Panduan teknik wawancara (download di LMS)",
+        "Template laporan survey (format Word)",
+        "Contoh diagram proses bisnis (PDF)",
+        "Template surat izin survey",
+        "Checklist observasi sistem"
       ],
       rubric: [
         {
