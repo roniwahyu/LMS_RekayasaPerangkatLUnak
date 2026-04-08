@@ -327,11 +327,9 @@ Berasal dari Toyota Production System, diadaptasi untuk software development.
 
 **Kanban Board Structure:**
 
-```
 | Backlog | To Do | In Progress | Review | Done |
 |---------|-------|-------------|--------|------|
 | WIP: ∞  | WIP:5 | WIP: 3      | WIP: 2 | WIP:∞|
-```
 
 **Kanban Metrics:**
 

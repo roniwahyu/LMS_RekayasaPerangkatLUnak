@@ -1,102 +1,248 @@
 import React from 'react';
 
-// Ilustrasi Pengantar RPL
+// Ilustrasi Pengantar RPL - Enhanced with animations
 export const IntroductionIllustration: React.FC = () => (
-  <svg viewBox="0 0 400 250" className="w-full h-auto max-w-md mx-auto">
-    <defs>
-      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#3B82F6" />
-        <stop offset="100%" stopColor="#8B5CF6" />
-      </linearGradient>
-    </defs>
-    {/* Background */}
-    <rect x="20" y="20" width="360" height="210" rx="10" fill="#F1F5F9" />
-    
-    {/* Main Screen */}
-    <rect x="50" y="40" width="180" height="120" rx="5" fill="#1E293B" />
-    <rect x="55" y="50" width="170" height="90" fill="#0F172A" />
-    
-    {/* Code lines */}
-    <rect x="60" y="55" width="60" height="6" rx="2" fill="#3B82F6" />
-    <rect x="60" y="65" width="100" height="6" rx="2" fill="#10B981" />
-    <rect x="70" y="75" width="80" height="6" rx="2" fill="#F59E0B" />
-    <rect x="70" y="85" width="90" height="6" rx="2" fill="#EF4444" />
-    <rect x="60" y="95" width="70" height="6" rx="2" fill="#8B5CF6" />
-    <rect x="60" y="105" width="50" height="6" rx="2" fill="#3B82F6" />
-    <rect x="60" y="115" width="85" height="6" rx="2" fill="#10B981" />
-    <rect x="60" y="125" width="40" height="6" rx="2" fill="#F59E0B" />
-    
-    {/* Screen stand */}
-    <rect x="120" y="160" width="40" height="15" fill="#64748B" />
-    <rect x="100" y="175" width="80" height="8" rx="2" fill="#475569" />
-    
-    {/* Gear icons */}
-    <circle cx="300" cy="80" r="30" fill="url(#grad1)" opacity="0.9" />
-    <circle cx="300" cy="80" r="12" fill="#F1F5F9" />
-    {/* Gear teeth */}
-    <rect x="295" y="45" width="10" height="12" fill="url(#grad1)" />
-    <rect x="295" y="103" width="10" height="12" fill="url(#grad1)" />
-    <rect x="265" y="75" width="12" height="10" fill="url(#grad1)" />
-    <rect x="323" y="75" width="12" height="10" fill="url(#grad1)" />
-    
-    {/* Small gear */}
-    <circle cx="340" cy="130" r="18" fill="#10B981" opacity="0.9" />
-    <circle cx="340" cy="130" r="7" fill="#F1F5F9" />
-    
-    {/* Document */}
-    <rect x="260" y="160" width="50" height="60" rx="3" fill="white" stroke="#CBD5E1" strokeWidth="2" />
-    <rect x="268" y="170" width="34" height="4" rx="1" fill="#CBD5E1" />
-    <rect x="268" y="178" width="28" height="4" rx="1" fill="#CBD5E1" />
-    <rect x="268" y="186" width="32" height="4" rx="1" fill="#CBD5E1" />
-    <rect x="268" y="194" width="20" height="4" rx="1" fill="#CBD5E1" />
-    <circle cx="295" cy="210" r="6" fill="#10B981" />
-    <path d="M292 210 L294 213 L299 207" stroke="white" strokeWidth="2" fill="none" />
-    
-    {/* People */}
-    <circle cx="330" cy="180" r="12" fill="#F59E0B" />
-    <rect x="320" y="195" width="20" height="25" rx="5" fill="#F59E0B" />
-    
-    <circle cx="355" cy="185" r="10" fill="#3B82F6" />
-    <rect x="347" y="198" width="16" height="22" rx="4" fill="#3B82F6" />
-  </svg>
+  <div className="relative w-full max-w-2xl mx-auto p-6">
+    <svg viewBox="0 0 500 300" className="w-full h-auto">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#3B82F6" />
+          <stop offset="100%" stopColor="#8B5CF6" />
+        </linearGradient>
+        <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#1E293B" />
+          <stop offset="100%" stopColor="#0F172A" />
+        </linearGradient>
+      </defs>
+      
+      {/* Background with pattern */}
+      <rect x="0" y="0" width="500" height="300" rx="15" fill="#F8FAFC" />
+      <circle cx="450" cy="50" r="100" fill="#DBEAFE" opacity="0.5" />
+      <circle cx="50" cy="250" r="80" fill="#F3E8FF" opacity="0.5" />
+      
+      {/* Main Screen */}
+      <g className="animate-pulse" style={{ animationDuration: '3s' }}>
+        <rect x="60" y="50" width="200" height="140" rx="8" fill="url(#screenGrad)" />
+        <rect x="65" y="60" width="190" height="110" fill="#0F172A" />
+      </g>
+      
+      {/* Code lines with animation */}
+      <g>
+        <rect x="75" y="70" width="70" height="8" rx="3" fill="#3B82F6" opacity="0.9">
+          <animate attributeName="width" values="70;80;70" dur="2s" repeatCount="indefinite" />
+        </rect>
+        <rect x="75" y="85" width="120" height="8" rx="3" fill="#10B981" opacity="0.9">
+          <animate attributeName="width" values="120;100;120" dur="2.5s" repeatCount="indefinite" />
+        </rect>
+        <rect x="85" y="100" width="90" height="8" rx="3" fill="#F59E0B" opacity="0.9">
+          <animate attributeName="width" values="90;110;90" dur="3s" repeatCount="indefinite" />
+        </rect>
+        <rect x="85" y="115" width="100" height="8" rx="3" fill="#EF4444" opacity="0.9">
+          <animate attributeName="width" values="100;85;100" dur="2.2s" repeatCount="indefinite" />
+        </rect>
+        <rect x="75" y="130" width="80" height="8" rx="3" fill="#8B5CF6" opacity="0.9">
+          <animate attributeName="width" values="80;95;80" dur="2.8s" repeatCount="indefinite" />
+        </rect>
+        <rect x="75" y="145" width="60" height="8" rx="3" fill="#3B82F6" opacity="0.9">
+          <animate attributeName="width" values="60;75;60" dur="2.3s" repeatCount="indefinite" />
+        </rect>
+      </g>
+      
+      {/* Screen stand */}
+      <rect x="140" y="190" width="40" height="15" fill="#64748B" />
+      <rect x="115" y="205" width="90" height="10" rx="3" fill="#475569" />
+      
+      {/* Rotating Gear */}
+      <g transform="translate(350, 100)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite" />
+          <circle cx="0" cy="0" r="40" fill="url(#grad1)" opacity="0.9" />
+          <circle cx="0" cy="0" r="15" fill="#F8FAFC" />
+          {/* Gear teeth */}
+          <rect x="-5" y="-50" width="10" height="15" fill="url(#grad1)" />
+          <rect x="-5" y="35" width="10" height="15" fill="url(#grad1)" />
+          <rect x="-50" y="-5" width="15" height="10" fill="url(#grad1)" />
+          <rect x="35" y="-5" width="15" height="10" fill="url(#grad1)" />
+          <rect x="25" y="-35" width="10" height="15" fill="url(#grad1)" transform="rotate(45)" />
+          <rect x="-35" y="25" width="10" height="15" fill="url(#grad1)" transform="rotate(45)" />
+        </g>
+      </g>
+      
+      {/* Small rotating gear */}
+      <g transform="translate(400, 170)">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="8s" repeatCount="indefinite" />
+          <circle cx="0" cy="0" r="25" fill="#10B981" opacity="0.9" />
+          <circle cx="0" cy="0" r="10" fill="#F8FAFC" />
+          <rect x="-3" y="-32" width="6" height="10" fill="#10B981" />
+          <rect x="-3" y="22" width="6" height="10" fill="#10B981" />
+          <rect x="-32" y="-3" width="10" height="6" fill="#10B981" />
+          <rect x="22" y="-3" width="10" height="6" fill="#10B981" />
+        </g>
+      </g>
+      
+      {/* Document with checkmark */}
+      <g transform="translate(300, 200)">
+        <rect x="0" y="0" width="60" height="75" rx="5" fill="white" stroke="#CBD5E1" strokeWidth="2" />
+        <rect x="10" y="12" width="40" height="5" rx="2" fill="#CBD5E1" />
+        <rect x="10" y="22" width="35" height="5" rx="2" fill="#CBD5E1" />
+        <rect x="10" y="32" width="38" height="5" rx="2" fill="#CBD5E1" />
+        <rect x="10" y="42" width="25" height="5" rx="2" fill="#CBD5E1" />
+        <circle cx="30" cy="62" r="8" fill="#10B981" />
+        <path d="M26 62 L29 65 L35 59" stroke="white" strokeWidth="2" fill="none" />
+      </g>
+      
+      {/* People icons */}
+      <g transform="translate(400, 220)">
+        <circle cx="0" cy="0" r="15" fill="#F59E0B" />
+        <rect x="-12" y="18" width="24" height="30" rx="8" fill="#F59E0B" />
+      </g>
+      <g transform="translate(440, 230)">
+        <circle cx="0" cy="0" r="12" fill="#3B82F6" />
+        <rect x="-10" y="15" width="20" height="25" rx="6" fill="#3B82F6" />
+      </g>
+      
+      {/* Labels */}
+      <text x="160" y="240" textAnchor="middle" fill="#1E293B" fontSize="14" fontWeight="bold">Software Engineering</text>
+      <text x="160" y="258" textAnchor="middle" fill="#64748B" fontSize="11">Process • Methods • Tools • Quality</text>
+    </svg>
+  </div>
 );
 
-// Ilustrasi Proses Software
+// Ilustrasi Proses Software - Enhanced with interactive elements
 export const ProcessIllustration: React.FC = () => (
-  <svg viewBox="0 0 400 200" className="w-full h-auto max-w-lg mx-auto">
-    {/* Waterfall steps */}
-    <rect x="20" y="20" width="70" height="35" rx="5" fill="#3B82F6" />
-    <text x="55" y="42" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Requirements</text>
-    
-    <rect x="95" y="45" width="70" height="35" rx="5" fill="#8B5CF6" />
-    <text x="130" y="67" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Design</text>
-    
-    <rect x="170" y="70" width="70" height="35" rx="5" fill="#EC4899" />
-    <text x="205" y="92" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Implement</text>
-    
-    <rect x="245" y="95" width="70" height="35" rx="5" fill="#F59E0B" />
-    <text x="280" y="117" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Testing</text>
-    
-    <rect x="320" y="120" width="70" height="35" rx="5" fill="#10B981" />
-    <text x="355" y="142" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Deploy</text>
-    
-    {/* Arrows */}
-    <path d="M90 37 L95 50" stroke="#64748B" strokeWidth="2" fill="none" markerEnd="url(#arrowhead)" />
-    <path d="M165 62 L170 75" stroke="#64748B" strokeWidth="2" fill="none" />
-    <path d="M240 87 L245 100" stroke="#64748B" strokeWidth="2" fill="none" />
-    <path d="M315 112 L320 125" stroke="#64748B" strokeWidth="2" fill="none" />
-    
-    {/* Spiral below */}
-    <text x="60" y="175" fill="#64748B" fontSize="12" fontWeight="bold">Waterfall Model</text>
-    
-    {/* Spiral representation */}
-    <ellipse cx="280" cy="175" rx="80" ry="20" fill="none" stroke="#3B82F6" strokeWidth="2" strokeDasharray="5,3" />
-    <ellipse cx="280" cy="175" rx="60" ry="15" fill="none" stroke="#8B5CF6" strokeWidth="2" strokeDasharray="5,3" />
-    <ellipse cx="280" cy="175" rx="40" ry="10" fill="none" stroke="#EC4899" strokeWidth="2" strokeDasharray="5,3" />
-    <ellipse cx="280" cy="175" rx="20" ry="5" fill="none" stroke="#10B981" strokeWidth="2" />
-    <circle cx="280" cy="175" r="4" fill="#10B981" />
-    <text x="280" y="198" textAnchor="middle" fill="#64748B" fontSize="12" fontWeight="bold">Spiral Model</text>
-  </svg>
+  <div className="relative w-full max-w-3xl mx-auto p-6">
+    <svg viewBox="0 0 600 350" className="w-full h-auto">
+      <defs>
+        <linearGradient id="waterfallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#3B82F6" />
+          <stop offset="100%" stopColor="#1D4ED8" />
+        </linearGradient>
+        <linearGradient id="spiralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#8B5CF6" />
+          <stop offset="100%" stopColor="#6D28D9" />
+        </linearGradient>
+      </defs>
+      
+      {/* Background */}
+      <rect x="0" y="0" width="600" height="350" rx="15" fill="#F8FAFC" />
+      
+      {/* Waterfall Model Section */}
+      <text x="150" y="30" textAnchor="middle" fill="#1E293B" fontSize="16" fontWeight="bold">Waterfall Model</text>
+      
+      {/* Waterfall steps with animation */}
+      <g>
+        {/* Requirements */}
+        <g>
+          <rect x="30" y="50" width="80" height="40" rx="6" fill="url(#waterfallGrad)">
+            <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite" />
+          </rect>
+          <text x="70" y="75" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">Requirements</text>
+        </g>
+        
+        {/* Arrow */}
+        <path d="M70 90 L70 100 L80 95 L70 100 L60 95" stroke="#64748B" strokeWidth="2" fill="none" />
+        
+        {/* Design */}
+        <g>
+          <rect x="50" y="105" width="80" height="40" rx="6" fill="#8B5CF6">
+            <animate attributeName="opacity" values="1;0.7;1" dur="2.2s" repeatCount="indefinite" />
+          </rect>
+          <text x="90" y="130" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">Design</text>
+        </g>
+        
+        {/* Arrow */}
+        <path d="M90 145 L90 155 L100 150 L90 155 L80 150" stroke="#64748B" strokeWidth="2" fill="none" />
+        
+        {/* Implementation */}
+        <g>
+          <rect x="70" y="160" width="80" height="40" rx="6" fill="#EC4899">
+            <animate attributeName="opacity" values="1;0.7;1" dur="2.4s" repeatCount="indefinite" />
+          </rect>
+          <text x="110" y="185" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">Implement</text>
+        </g>
+        
+        {/* Arrow */}
+        <path d="M110 200 L110 210 L120 205 L110 210 L100 205" stroke="#64748B" strokeWidth="2" fill="none" />
+        
+        {/* Testing */}
+        <g>
+          <rect x="90" y="215" width="80" height="40" rx="6" fill="#F59E0B">
+            <animate attributeName="opacity" values="1;0.7;1" dur="2.6s" repeatCount="indefinite" />
+          </rect>
+          <text x="130" y="240" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">Testing</text>
+        </g>
+        
+        {/* Arrow */}
+        <path d="M130 255 L130 265 L140 260 L130 265 L120 260" stroke="#64748B" strokeWidth="2" fill="none" />
+        
+        {/* Deploy */}
+        <g>
+          <rect x="110" y="270" width="80" height="40" rx="6" fill="#10B981">
+            <animate attributeName="opacity" values="1;0.7;1" dur="2.8s" repeatCount="indefinite" />
+          </rect>
+          <text x="150" y="295" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">Deploy</text>
+        </g>
+      </g>
+      
+      {/* Spiral Model Section */}
+      <text x="420" y="30" textAnchor="middle" fill="#1E293B" fontSize="16" fontWeight="bold">Spiral Model</text>
+      
+      {/* Spiral with animation */}
+      <g transform="translate(420, 180)">
+        <ellipse cx="0" cy="0" rx="120" ry="100" fill="none" stroke="#3B82F6" strokeWidth="3" strokeDasharray="10,5">
+          <animate attributeName="stroke-dashoffset" values="0;30" dur="3s" repeatCount="indefinite" />
+        </ellipse>
+        <ellipse cx="0" cy="0" rx="90" ry="75" fill="none" stroke="#8B5CF6" strokeWidth="3" strokeDasharray="10,5">
+          <animate attributeName="stroke-dashoffset" values="0;30" dur="3s" repeatCount="indefinite" />
+        </ellipse>
+        <ellipse cx="0" cy="0" rx="60" ry="50" fill="none" stroke="#EC4899" strokeWidth="3" strokeDasharray="10,5">
+          <animate attributeName="stroke-dashoffset" values="0;30" dur="3s" repeatCount="indefinite" />
+        </ellipse>
+        <ellipse cx="0" cy="0" rx="30" ry="25" fill="none" stroke="#F59E0B" strokeWidth="3" strokeDasharray="10,5">
+          <animate attributeName="stroke-dashoffset" values="0;30" dur="3s" repeatCount="indefinite" />
+        </ellipse>
+        <circle cx="0" cy="0" r="8" fill="#10B981">
+          <animate attributeName="r" values="8;10;8" dur="1.5s" repeatCount="indefinite" />
+        </circle>
+        
+        {/* Labels for quadrants */}
+        <text x="0" y="-85" textAnchor="middle" fill="#64748B" fontSize="10" fontWeight="bold">Planning</text>
+        <text x="85" y="0" textAnchor="middle" fill="#64748B" fontSize="10" fontWeight="bold">Risk Analysis</text>
+        <text x="0" y="85" textAnchor="middle" fill="#64748B" fontSize="10" fontWeight="bold">Evaluation</text>
+        <text x="-85" y="0" textAnchor="middle" fill="#64748B" fontSize="10" fontWeight="bold">Development</text>
+      </g>
+      
+      {/* V-Model Mini */}
+      <text x="300" y="30" textAnchor="middle" fill="#1E293B" fontSize="16" fontWeight="bold">V-Model</text>
+      
+      <g transform="translate(300, 180)">
+        {/* Left side - Development phases */}
+        <rect x="-80" y="-100" width="60" height="30" rx="4" fill="#3B82F6" />
+        <text x="-50" y="-80" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">Requirements</text>
+        
+        <rect x="-70" y="-60" width="60" height="30" rx="4" fill="#8B5CF6" />
+        <text x="-40" y="-40" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">Design</text>
+        
+        <rect x="-60" y="-20" width="60" height="30" rx="4" fill="#EC4899" />
+        <text x="-30" y="0" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">Coding</text>
+        
+        {/* Right side - Testing phases */}
+        <rect x="20" y="-100" width="60" height="30" rx="4" fill="#10B981" />
+        <text x="50" y="-80" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">Acceptance</text>
+        
+        <rect x="10" y="-60" width="60" height="30" rx="4" fill="#F59E0B" />
+        <text x="40" y="-40" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">System</text>
+        
+        <rect x="0" y="-20" width="60" height="30" rx="4" fill="#EF4444" />
+        <text x="30" y="0" textAnchor="middle" fill="white" fontSize="8" fontWeight="bold">Unit Test</text>
+        
+        {/* V lines */}
+        <line x1="-50" y1="-70" x2="50" y2="-70" stroke="#CBD5E1" strokeWidth="1" strokeDasharray="3,3" />
+        <line x1="-40" y1="-30" x2="40" y2="-30" stroke="#CBD5E1" strokeWidth="1" strokeDasharray="3,3" />
+      </g>
+    </svg>
+  </div>
 );
 
 // Ilustrasi Agile/Scrum
