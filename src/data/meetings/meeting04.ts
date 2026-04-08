@@ -269,12 +269,11 @@ Deskripsi layanan yang harus disediakan sistem dan batasan operasinya.
 - **Excitement needs:** Delighters, unexpected
 
 **Value vs Effort Matrix:**
-```
+
 High Value, Low Effort → Do First
-High Value, High Effort → Plan Carefully
+High Value, High Effort → Plan Carefully  
 Low Value, Low Effort → Do Later
 Low Value, High Effort → Avoid
-```
 
 **3. Conflict Resolution**
 - Identify conflicting requirements
@@ -348,7 +347,7 @@ Low Value, High Effort → Avoid
 ✅ "System shall log all user activities"
 
 **Requirements Template:**
-```
+
 REQ-ID: FR-001
 Title: User Authentication
 Description: System shall authenticate users using email and password
@@ -360,9 +359,9 @@ Acceptance Criteria:
 - Invalid credentials show error message
 - Account locks after 3 failed attempts
 Dependencies: None
-```
 
 **Requirements Traceability Matrix:**
+
 | Req ID | Source | Design | Code | Test | Status |
 |--------|--------|--------|------|------|--------|
 | FR-001 | User   | D-001  | M-A  | TC-01| Done   |`
@@ -418,7 +417,6 @@ Dependencies: None
 
 **Use Case Description Template:**
 
-```
 Use Case ID: UC-001
 Use Case Name: Place Order
 Actor: Customer
@@ -474,7 +472,6 @@ Special Requirements:
 
 Frequency: 1000 times per day
 Priority: High
-```
 
 **Tips Use Case:**
 - Fokus pada WHAT, bukan HOW
@@ -631,13 +628,224 @@ Code → Requirements
 - Change management
 - Reporting
 - Collaboration`
+    },
+    {
+      title: "Studi Kasus: Dokumen SRS SIMENDOG",
+      content: `**SIMENDOG - Sistem Informasi Manajemen Peternakan Endog**
+
+Berikut adalah contoh dokumen SRS (Software Requirements Specification) dari proyek nyata: SIMENDOG, aplikasi web untuk mengelola operasional peternakan ayam petelur, baik untuk peternakan mandiri maupun jaringan mitra dalam satu desa/wilayah.
+
+**Karakteristik Proyek:**
+- **Domain:** Agritech / Peternakan
+- **Pengguna:** 6 peran (Super Admin, Pemilik/Manager, Operator Kandang, Petugas Gudang, Petugas Keuangan, Mitra Peternak)
+- **Stack:** Laravel 10, Livewire 3, Jetstream, Tailwind CSS, MySQL 8.x
+
+---
+
+**Model Bisnis: Hub & Mitra**
+
+\`\`\`
+┌──────────────────────────────────────────────────────────────┐
+│                    PENGELOLA PUSAT (HUB)                     │
+│          (BUMDes / Kelompok Tani / Koperasi / Desa)          │
+│                                                              │
+│  ┌──────────┐  ┌──────────────┐  ┌───────────────────────┐   │
+│  │ Kandang  │  │ Gudang Pakan │  │ Manajemen Penjualan   │   │
+│  │ Sendiri  │  │   Sentral    │  │ (Telur seluruh mitra) │   │
+│  └──────────┘  └──────┬───────┘  └───────────┬───────────┘   │
+│                       │ distribusi            │ konsolidasi   │
+└───────────────────────┼───────────────────────┼──────────────┘
+                        │                       │
+        ┌───────────────┼───────────────┐       │
+        ▼               ▼               ▼       │
+  ┌──────────┐   ┌──────────┐   ┌──────────┐   │
+  │ MITRA 1  │   │ MITRA 2  │   │ MITRA N  │   │
+  │ Pak Agus │   │ Bu Sari  │   │ Pak Joko │   │
+  │ 2 kandang│   │ 1 kandang│   │ 3 kandang│   │
+  │ 500 ekor │   │ 300 ekor │   │ 800 ekor │   │
+  └─────┬────┘   └─────┬────┘   └─────┬────┘   │
+        │               │               │       │
+        └───────────────┴───────────────┘       │
+                  produksi telur ───────────────→┘
+                  (setor ke pusat / jual mandiri)
+\`\`\`
+
+---
+
+**Contoh Functional Requirements (FR) dari SIMENDOG:**
+
+**Modul Master Data:**
+- FR-1.1: Sistem harus menyimpan data farm/peternakan dengan field: nama, alamat, pemilik, luas area, kapasitas total, status aktif.
+- FR-1.2: Sistem harus menyimpan data kandang dengan field: kode unik, nama, tipe (open/closed/semi_closed/postal/battery/colony), kapasitas, dimensi.
+- FR-1.3: Sistem harus menyimpan data strain ayam dengan field: kode, nama, kategori (ras_komersial/kampung/kub/elba/arab/silangan), target HDP, standar pakan harian.
+- FR-1.4: Sistem harus menyimpan data supplier dan customer dengan tipe dan kontak.
+
+**Modul Manajemen Populasi:**
+- FR-2.1: Sistem harus mencatat flock/batch ayam dengan tracking: tanggal masuk, umur masuk, jumlah masuk, supplier, fase (DOC/Starter/Grower/Pre-Layer/Layer/Afkir).
+- FR-2.2: Sistem harus mencatat mutasi populasi (masuk, mati, afkir, pindah kandang) dengan tipe dan penyebab.
+- FR-2.3: Sistem harus menghitung otomatis: umur ayam (hari & minggu), fase berdasarkan umur, mortalitas harian.
+- FR-2.4: Alert otomatis jika mortalitas harian > 0.5% (konfigurabel).
+
+**Modul Produksi Telur (Inti):**
+- FR-3.1: Sistem harus mencatat produksi telur harian per flock dengan field: jumlah telur utuh, retak, abnormal, berat total, populasi hari ini.
+- FR-3.2: Sistem harus menghitung otomatis: total telur, HDP (Hen-Day Production %), berat rata-rata per butir, egg mass.
+- FR-3.3: Unique constraint: satu record per flock per tanggal (mencegah duplikasi).
+
+**Contoh Kalkulasi Otomatis:**
+\`\`\`
+total_telur     = jumlah_utuh + jumlah_retak + jumlah_abnormal
+hdp (%)         = (total_telur / populasi_hari_ini) × 100
+berat_rata_rata = (berat_total_kg × 1000) / total_telur
+egg_mass        = hdp × berat_rata_rata / 100  (gram/ekor/hari)
+\`\`\`
+
+**Modul Manajemen Pakan:**
+- FR-4.1: Sistem harus mencatat stok pakan masuk/keluar/penyesuaian dengan tracking harga dan supplier.
+- FR-4.2: Sistem harus mencatat konsumsi pakan harian per flock dengan kalkulasi: konsumsi per ekor (gram/ekor/hari).
+- FR-4.3: Sistem harus menghitung FCR (Feed Conversion Ratio) = total_pakan_kg / total_berat_telur_kg.
+- FR-4.4: Alert jika stok pakan < 3 hari kebutuhan (konfigurabel).
+
+**Modul Keuangan:**
+- FR-5.1: Sistem harus mencatat transaksi pembelian (DOC, pakan, obat, peralatan) dengan auto-generated nomor transaksi.
+- FR-5.2: Sistem harus mencatat transaksi penjualan (telur, ayam afkir) dengan status bayar dan settlement mitra.
+- FR-5.3: Sistem harus mencatat pengeluaran operasional (listrik, air, gaji, transportasi, pemeliharaan).
+- FR-5.4: Sistem harus melacak konversi telur → uang secara real-time dari seluruh jaringan.
+
+**Modul Mitra & Jaringan:**
+- FR-6.1: Sistem harus mengelola data mitra peternak dengan kode unik dan informasi kontak.
+- FR-6.2: Sistem harus mendukung model Hub & Mitra: pusat beli pakan bulk → distribusi ke mitra → catat konsumsi per mitra.
+- FR-6.3: Sistem harus mengkonsolidasi penjualan telur dari semua mitra.
+- FR-6.4: Mitra hanya bisa akses data miliknya sendiri (isolasi data).
+
+---
+
+**Contoh Non-Functional Requirements (NFR) dari SIMENDOG:**
+
+**Performance:**
+- NFR-1.1: Dashboard harus load dalam < 2 detik.
+- NFR-1.2: Sistem harus mendukung 10+ mitra dengan 50+ kandang tanpa degradasi performa.
+
+**Usability:**
+- NFR-2.1: Interface harus mudah digunakan oleh operator kandang (non-technical).
+- NFR-2.2: Input produksi harian harus bisa dilakukan dalam < 2 menit per kandang.
+- NFR-2.3: Aplikasi harus mobile-friendly untuk input di lapangan.
+
+**Security:**
+- NFR-3.1: Role-based access control dengan 6 peran berbeda.
+- NFR-3.2: Data mitra terisolasi — mitra hanya bisa akses data miliknya sendiri.
+- NFR-3.3: Semua transaksi keuangan harus ter-audit (log user + timestamp).
+
+**Scalability:**
+- NFR-4.1: Sistem harus scalable untuk menambah mitra baru tanpa redesign.
+- NFR-4.2: Database harus bisa menampung 1000+ flock dengan 10 tahun data historis.
+
+**Reliability:**
+- NFR-5.1: Sistem harus mencatat mutasi populasi dengan akurat (tidak boleh data loss).
+- NFR-5.2: Alert otomatis jika mortalitas harian > 0.5%.
+
+---
+
+**Contoh Use Case dari SIMENDOG:**
+
+\`\`\`
+Use Case ID: UC-SIMENDOG-001
+Use Case Name: Input Produksi Telur Harian
+Actor: Operator Kandang (Primary)
+Preconditions:
+- Operator sudah login
+- Data flock tersedia di sistem
+- Tanggal = tanggal hari ini
+
+Main Flow (Basic Path):
+1. Operator membuka menu "Produksi Telur"
+2. System menampilkan daftar flock aktif
+3. Operator memilih flock (misal: "Kandang A - Batch 2026-001")
+4. System menampilkan form input:
+   - Jumlah telur utuh
+   - Jumlah telur retak
+   - Jumlah telur abnormal
+   - Berat total (kg)
+5. Operator memasukkan data:
+   - Jumlah telur utuh: 450
+   - Jumlah telur retak: 5
+   - Jumlah telur abnormal: 2
+   - Berat total: 28.5 kg
+6. System menghitung otomatis:
+   - Total telur: 457
+   - HDP: (457/500) × 100 = 91.4%
+   - Berat rata-rata: (28.5×1000)/457 = 62.4 gram
+7. Operator klik "Simpan"
+8. System menyimpan record dan menampilkan konfirmasi
+9. System memperbarui dashboard KPI
+
+Alternative Flows:
+3a. Operator memilih flock yang salah
+  3a.1. Operator klik "Batal"
+  3a.2. Kembali ke step 2
+
+5a. Operator memasukkan data tidak valid (angka negatif)
+  5a.1. System menampilkan pesan error
+  5a.2. Kembali ke step 5
+
+5b. Sudah ada data untuk flock + tanggal ini
+  5b.1. System menampilkan pesan: "Data produksi untuk tanggal ini sudah ada"
+  5b.2. Tawarkan opsi: "Lihat/Edit data yang ada"
+
+Exception Flows:
+E1. Koneksi terputus
+  E1.1. System menampilkan pesan error
+  E1.2. Data disimpan sebagai draft lokal
+  E1.3. Use case berakhir
+
+Postconditions:
+- Record produksi tersimpan di database
+- Dashboard KPI diperbarui
+- Alert jika HDP < 80% (konfigurabel)
+- Notifikasi dikirim ke Pemilik/Manager
+
+Business Rules:
+- Satu record per flock per hari (unique constraint)
+- HDP harus antara 0-100%
+- Berat telur harus > 0
+- Populasi harus > 0
+
+Frequency: 1x per hari per kandang
+Priority: High
+\`\`\`
+
+---
+
+**Lessons Learned dari SIMENDOG:**
+
+1. **Multi-Tenant Complexity:** Mengelola data mitra yang terpisah namun terpusat memerlukan design yang matang (foreign key \`mitra_id\`, row-level security).
+
+2. **Domain Knowledge:** Memahami domain peternakan (fase ayam, HDP, FCR, vaksinasi) sangat penting untuk menulis requirements yang akurat.
+
+3. **Real-Time Tracking:** Requirement "konversi telur → uang real-time" memerlukan arsitektur yang mendukung data flow yang efisien.
+
+4. **Financial Accuracy:** Sistem keuangan memerlukan audit trail yang ketat dan reconciliation mechanism.
+
+5. **User Diversity:** 6 peran berbeda dengan kebutuhan akses yang berbeda memerlukan careful RBAC design.
+
+---
+
+**Aktivitas Diskusi Kelas:**
+
+1. Identifikasi minimal 5 FR dan 3 NFR tambahan yang belum tercakup di atas.
+2. Buat Use Case Diagram dari FR yang ada dengan 6 aktor.
+3. Prioritaskan semua requirements menggunakan MoSCoW method.
+4. Diskusikan: teknik elicitation mana yang paling cocok untuk proyek SIMENDOG? Mengapa?
+5. Buat Requirements Traceability Matrix untuk Modul Produksi Telur.
+
+> Dokumen SRS lengkap SIMENDOG tersedia di: \`docs/REQUIREMENTS.md\``
     }
   ],
   references: [
     "Sommerville, I. (2016). Software Engineering. Chapter 4-5.",
     "Wiegers, K. & Beatty, J. (2013). Software Requirements. 3rd Edition.",
     "IEEE Std 830-1998. Recommended Practice for Software Requirements Specifications.",
-    "Pohl, K. (2010). Requirements Engineering: Fundamentals, Principles, and Techniques."
+    "Pohl, K. (2010). Requirements Engineering: Fundamentals, Principles, and Techniques.",
+    "SIMENDOG SRS Document (2026). Sistem Informasi Manajemen Peternakan Endog - Studi kasus SRS proyek nyata."
   ],
   assignments: [
     {
