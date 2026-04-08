@@ -544,5 +544,122 @@ Identify vulnerabilities dan security risks.
     "ISTQB Foundation Level Syllabus",
     "Crispin, L., Gregory, J. (2009). Agile Testing: A Practical Guide.",
     "OWASP Testing Guide v4.0"
+  ],
+  assignments: [
+    {
+      id: "tugas-9-1",
+      title: "Test Plan dan Test Case untuk Aplikasi Web",
+      type: "kelompok",
+      description: "Buat test plan lengkap dan test cases untuk aplikasi web yang sudah ada (bisa aplikasi kampus atau aplikasi open source). Lakukan testing dan dokumentasikan hasilnya.",
+      instructions: [
+        "LANGKAH 1 - PILIH APLIKASI: Pilih salah satu aplikasi web untuk ditest: (a) Sistem Informasi Akademik kampus, (b) Website perpustakaan kampus, (c) Aplikasi open source dari GitHub (contoh: WordPress, Moodle), (d) E-commerce demo site.",
+        "LANGKAH 2 - ANALISIS REQUIREMENTS: Pelajari fitur-fitur aplikasi yang akan ditest. Identifikasi minimal 5 fitur utama yang akan menjadi fokus testing. Dokumentasikan expected behavior untuk setiap fitur.",
+        "LANGKAH 3 - BUAT TEST PLAN: Tulis Test Plan Document yang berisi: (a) Test Objectives, (b) Scope (in-scope dan out-of-scope), (c) Test Strategy (jenis testing yang akan dilakukan), (d) Test Environment, (e) Test Schedule, (f) Entry dan Exit Criteria, (g) Risk dan Mitigation.",
+        "LANGKAH 4 - DESAIN TEST CASES: Buat minimal 30 test cases yang mencakup: (a) Functional testing (15 test cases), (b) Usability testing (5 test cases), (c) Security testing (5 test cases), (d) Performance testing (5 test cases). Format: Test Case ID, Title, Preconditions, Test Steps, Expected Result, Actual Result, Status.",
+        "LANGKAH 5 - EKSEKUSI TESTING: Jalankan semua test cases. Catat hasil testing dengan detail: (a) Screenshot untuk setiap test case, (b) Actual result, (c) Pass/Fail status, (d) Bug yang ditemukan.",
+        "LANGKAH 6 - BUG REPORTING: Untuk setiap bug yang ditemukan, buat bug report dengan format: (a) Bug ID, (b) Severity (Critical/High/Medium/Low), (c) Priority, (d) Steps to Reproduce, (e) Expected vs Actual Result, (f) Screenshot/Video, (g) Environment details.",
+        "LANGKAH 7 - TEST SUMMARY REPORT: Buat Test Summary Report yang berisi: (a) Test execution summary (berapa test pass/fail), (b) Bug summary (berapa bug ditemukan per severity), (c) Test coverage, (d) Recommendations untuk improvement.",
+        "LANGKAH 8 - AUTOMATION (BONUS): Buat automated test untuk minimal 5 test cases menggunakan Selenium atau Cypress. Bonus +15 poin jika berhasil.",
+        "LANGKAH 9 - PRESENTASI: Siapkan presentasi yang menunjukkan: (a) Aplikasi yang ditest, (b) Test strategy, (c) Demo eksekusi beberapa test cases, (d) Bug yang ditemukan, (e) Recommendations."
+      ],
+      deliverables: [
+        "Test Plan Document (format PDF, minimal 8 halaman)",
+        "Test Case Document dengan minimal 30 test cases (format Excel atau Google Sheets)",
+        "Test Execution Report dengan screenshot (format PDF)",
+        "Bug Report untuk setiap bug yang ditemukan (format Excel atau bug tracking tool)",
+        "Test Summary Report (format PDF, 3-5 halaman)",
+        "Automated test scripts (jika ada, bonus)",
+        "Presentasi PowerPoint (15-20 slide)",
+        "Video demo testing (opsional, bonus +5 poin)"
+      ],
+      duration: "3 minggu (21 hari kalender)",
+      difficulty: "sulit",
+      skills: [
+        "Test planning",
+        "Test case design",
+        "Manual testing",
+        "Bug reporting",
+        "Test automation (bonus)",
+        "Technical documentation"
+      ],
+      resources: [
+        "Template Test Plan (IEEE 829 standard)",
+        "Template Test Case (download di LMS)",
+        "Template Bug Report",
+        "Selenium WebDriver documentation",
+        "Cypress documentation",
+        "ISTQB Glossary"
+      ],
+      rubric: [
+        {
+          criteria: "Test Plan Quality",
+          excellent: "Test plan sangat lengkap, terstruktur, dan mengikuti standar IEEE 829",
+          good: "Test plan lengkap dengan struktur yang baik",
+          satisfactory: "Test plan kurang lengkap atau tidak terstruktur",
+          points: 25
+        },
+        {
+          criteria: "Test Cases Quality",
+          excellent: "30+ test cases yang well-designed, clear, dan comprehensive coverage",
+          good: "30 test cases dengan coverage yang cukup baik",
+          satisfactory: "Kurang dari 30 test cases atau coverage kurang",
+          points: 30
+        },
+        {
+          criteria: "Test Execution & Bug Reporting",
+          excellent: "Eksekusi testing sangat teliti dengan bug report yang detail dan profesional",
+          good: "Eksekusi testing baik dengan bug report yang memadai",
+          satisfactory: "Eksekusi testing atau bug report kurang detail",
+          points: 25
+        },
+        {
+          criteria: "Documentation & Presentation",
+          excellent: "Dokumentasi sangat profesional dan presentasi sangat jelas",
+          good: "Dokumentasi dan presentasi baik",
+          satisfactory: "Dokumentasi atau presentasi kurang baik",
+          points: 20
+        }
+      ]
+    },
+    {
+      id: "tugas-9-2",
+      title: "Test-Driven Development (TDD) Practice",
+      type: "praktikum",
+      description: "Praktikkan TDD dengan membuat aplikasi sederhana. Tulis test terlebih dahulu, baru implementasi kode.",
+      instructions: [
+        "LANGKAH 1 - PILIH PROJECT: Pilih salah satu project sederhana: (a) Calculator dengan operasi dasar dan advanced, (b) Todo List dengan CRUD operations, (c) String Utility Library, (d) Shopping Cart dengan discount rules.",
+        "LANGKAH 2 - SETUP ENVIRONMENT: Setup testing framework: (a) Java: JUnit 5, (b) Python: pytest, (c) JavaScript: Jest, (d) C#: NUnit. Pastikan dapat menjalankan test dengan command line.",
+        "LANGKAH 3 - WRITE FIRST TEST: Mulai dengan test paling sederhana. Contoh untuk calculator: test_add_two_positive_numbers(). Test harus FAIL karena belum ada implementasi (RED phase).",
+        "LANGKAH 4 - IMPLEMENT CODE: Tulis kode minimal yang membuat test PASS (GREEN phase). Jangan tulis kode lebih dari yang dibutuhkan untuk pass test.",
+        "LANGKAH 5 - REFACTOR: Improve kode tanpa mengubah behavior. Pastikan test tetap PASS setelah refactoring (REFACTOR phase).",
+        "LANGKAH 6 - REPEAT: Ulangi cycle RED-GREEN-REFACTOR untuk setiap fitur. Minimal 15 test cases untuk project yang dipilih.",
+        "LANGKAH 7 - CODE COVERAGE: Jalankan code coverage tool. Target: minimal 90% code coverage. Tools: (a) Java: JaCoCo, (b) Python: coverage.py, (c) JavaScript: Istanbul/NYC.",
+        "LANGKAH 8 - DOKUMENTASI: Tulis laporan yang berisi: (1) Deskripsi project, (2) TDD process yang dijalani, (3) Contoh RED-GREEN-REFACTOR cycle, (4) Code coverage report, (5) Lesson learned tentang TDD.",
+        "LANGKAH 9 - COMMIT HISTORY: Pastikan Git commit history menunjukkan TDD cycle. Setiap commit harus jelas: 'RED: add test for...', 'GREEN: implement...', 'REFACTOR: improve...'."
+      ],
+      deliverables: [
+        "Source code lengkap dengan test code (GitHub repository)",
+        "README.md dengan instruksi setup dan run tests",
+        "Code coverage report (HTML atau screenshot)",
+        "Git commit history yang menunjukkan TDD cycle",
+        "Laporan TDD practice (format PDF, minimal 5 halaman)",
+        "Screenshot test execution (all tests passing)"
+      ],
+      duration: "1 minggu (7 hari kalender)",
+      difficulty: "sedang",
+      skills: [
+        "Test-Driven Development",
+        "Unit testing",
+        "Refactoring",
+        "Code coverage analysis",
+        "Git best practices"
+      ],
+      resources: [
+        "Kent Beck - Test Driven Development: By Example",
+        "Testing framework documentation",
+        "Code coverage tools documentation",
+        "TDD kata exercises"
+      ]
+    }
   ]
 };

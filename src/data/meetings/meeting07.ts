@@ -653,5 +653,118 @@ Allow object to alter behavior when internal state changes.
     "Freeman, E., Freeman, E. (2004). Head First Design Patterns.",
     "Martin, R.C. (2017). Clean Architecture. Prentice Hall.",
     "Fowler, M. (1999). Refactoring: Improving the Design of Existing Code."
+  ],
+  assignments: [
+    {
+      id: "tugas-7-1",
+      title: "Implementasi Design Patterns dalam Aplikasi Nyata",
+      type: "praktikum",
+      description: "Implementasikan minimal 3 design patterns berbeda dalam sebuah aplikasi mini. Tunjukkan pemahaman kapan dan mengapa menggunakan setiap pattern.",
+      instructions: [
+        "LANGKAH 1 - PILIH APLIKASI: Pilih salah satu ide aplikasi berikut: (a) Sistem Notifikasi Multi-Channel (email, SMS, push notification), (b) Game Sederhana dengan berbagai karakter dan senjata, (c) Sistem Pembayaran Multi-Gateway, (d) Text Editor dengan undo/redo functionality.",
+        "LANGKAH 2 - IDENTIFIKASI PATTERNS: Tentukan minimal 3 design patterns yang akan diimplementasikan. Contoh kombinasi: (a) Singleton untuk Database Connection, (b) Factory untuk membuat objek, (c) Observer untuk event handling, (d) Strategy untuk algoritma yang bisa diganti.",
+        "LANGKAH 3 - DESAIN: Buat class diagram untuk setiap pattern yang akan diimplementasikan. Tunjukkan struktur class, interface, dan relationships. Jelaskan mengapa pattern tersebut cocok untuk kasus ini.",
+        "LANGKAH 4 - IMPLEMENTASI: Tulis kode dalam bahasa pemrograman pilihan (Java, Python, JavaScript, C#, atau PHP). Pastikan kode clean, readable, dan mengikuti best practices. Gunakan naming convention yang jelas.",
+        "LANGKAH 5 - DOKUMENTASI KODE: Tambahkan comment di setiap class yang menjelaskan: (a) Pattern apa yang digunakan, (b) Mengapa pattern ini dipilih, (c) Bagaimana pattern ini bekerja dalam konteks aplikasi.",
+        "LANGKAH 6 - UNIT TESTING: Buat minimal 5 unit test untuk membuktikan bahwa implementasi pattern berfungsi dengan benar. Gunakan testing framework (JUnit, pytest, Jest, dll).",
+        "LANGKAH 7 - DEMO: Buat main program yang mendemonstrasikan penggunaan setiap pattern. Output harus jelas menunjukkan pattern bekerja dengan baik.",
+        "LANGKAH 8 - LAPORAN: Tulis laporan teknis yang berisi: (1) Deskripsi aplikasi, (2) Pattern yang digunakan dan justifikasinya, (3) Class diagram, (4) Code snippets penting, (5) Screenshot output, (6) Lesson learned.",
+        "LANGKAH 9 - VIDEO DEMO: Rekam video 5-10 menit yang menjelaskan: (a) Walkthrough kode, (b) Demonstrasi aplikasi berjalan, (c) Penjelasan setiap pattern yang diimplementasikan."
+      ],
+      deliverables: [
+        "Source code lengkap (upload ke GitHub repository)",
+        "README.md dengan instruksi cara menjalankan aplikasi",
+        "Class diagram untuk setiap pattern (format PNG atau PDF)",
+        "Unit test code dengan hasil test (screenshot atau report)",
+        "Laporan teknis (format PDF, minimal 8 halaman)",
+        "Video demo (format MP4, durasi 5-10 menit, upload ke YouTube/Google Drive)",
+        "Link GitHub repository yang sudah public"
+      ],
+      duration: "2 minggu (14 hari kalender)",
+      difficulty: "sulit",
+      skills: [
+        "Object-Oriented Programming",
+        "Design patterns implementation",
+        "Clean code practices",
+        "Unit testing",
+        "Technical documentation",
+        "Version control (Git)"
+      ],
+      resources: [
+        "Refactoring Guru - Design Patterns (https://refactoring.guru/design-patterns)",
+        "Source Making - Design Patterns (https://sourcemaking.com/design_patterns)",
+        "Template class diagram (download di LMS)",
+        "Contoh implementasi design patterns (GitHub)",
+        "Testing framework documentation"
+      ],
+      rubric: [
+        {
+          criteria: "Implementasi Pattern",
+          excellent: "3+ patterns diimplementasikan dengan benar, kode clean dan mengikuti best practices",
+          good: "3 patterns diimplementasikan dengan beberapa kekurangan minor",
+          satisfactory: "Kurang dari 3 patterns atau implementasi tidak tepat",
+          points: 35
+        },
+        {
+          criteria: "Kualitas Kode",
+          excellent: "Kode sangat clean, readable, well-documented, dan mengikuti SOLID principles",
+          good: "Kode cukup clean dan readable dengan dokumentasi memadai",
+          satisfactory: "Kode kurang clean atau dokumentasi kurang",
+          points: 25
+        },
+        {
+          criteria: "Testing",
+          excellent: "Unit tests lengkap dengan coverage >80% dan semua test pass",
+          good: "Unit tests cukup dengan coverage >60%",
+          satisfactory: "Unit tests minimal atau coverage rendah",
+          points: 20
+        },
+        {
+          criteria: "Dokumentasi & Demo",
+          excellent: "Laporan sangat detail dan video demo sangat jelas dan profesional",
+          good: "Laporan dan demo cukup baik",
+          satisfactory: "Laporan atau demo kurang lengkap",
+          points: 20
+        }
+      ]
+    },
+    {
+      id: "tugas-7-2",
+      title: "Refactoring Code dengan Design Patterns",
+      type: "individual",
+      description: "Ambil kode program yang buruk (code smell), identifikasi masalahnya, dan refactor menggunakan design patterns yang sesuai.",
+      instructions: [
+        "LANGKAH 1 - CARI CODE SMELL: Cari atau buat kode program yang memiliki code smell seperti: (a) God Class (class terlalu besar), (b) Long Method, (c) Duplicate Code, (d) Switch Statements yang panjang, (e) Tight Coupling.",
+        "LANGKAH 2 - ANALISIS: Identifikasi minimal 3 code smell yang ada. Jelaskan mengapa ini adalah masalah dan dampaknya terhadap maintainability.",
+        "LANGKAH 3 - PILIH PATTERN: Tentukan design pattern yang tepat untuk mengatasi setiap code smell. Contoh: (a) Strategy Pattern untuk mengganti switch statement, (b) Factory Pattern untuk mengurangi coupling, (c) Template Method untuk menghilangkan duplicate code.",
+        "LANGKAH 4 - REFACTOR: Lakukan refactoring step-by-step. Commit setiap perubahan ke Git dengan message yang jelas. Pastikan aplikasi tetap berfungsi setelah setiap refactoring.",
+        "LANGKAH 5 - BEFORE-AFTER: Buat perbandingan kode before dan after refactoring. Highlight bagian yang berubah dan jelaskan improvement-nya.",
+        "LANGKAH 6 - METRICS: Ukur improvement menggunakan metrics: (a) Lines of Code, (b) Cyclomatic Complexity, (c) Coupling, (d) Cohesion. Gunakan tools seperti SonarQube atau code analyzer.",
+        "LANGKAH 7 - DOKUMENTASI: Tulis laporan refactoring yang berisi: (1) Code smell yang ditemukan, (2) Pattern yang digunakan, (3) Proses refactoring, (4) Before-after comparison, (5) Metrics improvement."
+      ],
+      deliverables: [
+        "Source code before refactoring (folder 'before')",
+        "Source code after refactoring (folder 'after')",
+        "Git commit history yang menunjukkan proses refactoring",
+        "Laporan refactoring (format PDF, minimal 6 halaman)",
+        "Tabel perbandingan metrics before-after",
+        "Screenshot dari code analyzer (SonarQube atau sejenisnya)"
+      ],
+      duration: "1 minggu (7 hari kalender)",
+      difficulty: "sedang",
+      skills: [
+        "Code smell detection",
+        "Refactoring techniques",
+        "Design patterns application",
+        "Code quality metrics",
+        "Git version control"
+      ],
+      resources: [
+        "Martin Fowler - Refactoring Catalog",
+        "SonarQube Community Edition (free)",
+        "Code Climate (free untuk open source)",
+        "Contoh code smell dan refactoring"
+      ]
+    }
   ]
 };
